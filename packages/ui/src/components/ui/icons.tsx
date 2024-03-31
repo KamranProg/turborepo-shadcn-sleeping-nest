@@ -1,1 +1,21 @@
-export { PersonStandingIcon } from "lucide-react";
+export {
+  PersonStandingIcon,
+  AlertTriangleIcon,
+  BadgeCheckIcon,
+  LaptopIcon,
+  PartyPopperIcon,
+  UserCheck2Icon,
+  UserCheckIcon,
+  UserIcon,
+  UserRoundXIcon,
+  ListChecksIcon,
+  PieChartIcon,
+  StarIcon,
+  UsersIcon,
+  MenuIcon,
+  CalendarIcon,
+  Undo2,
+  ViewIcon,
+  PencilIcon,
+  TrashIcon
+} from "lucide-react";
