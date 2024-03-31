@@ -8,7 +8,13 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter @repo/ui ui:add"
+    "ui:add": "pnpm --filter @repo/ui ui:add",
+    "db:migrate": "pnpm db:migrate --filter `./apps/api",
+    "db:generate": "pnpm db:generate --filter `./apps/api",
+    "db:generate-seed-data": "pnpm db:generate-seed-data --filter `./apps/api",
+    "db:seed": "pnpm db:seed --filter `./apps/api",
+    "db:clean": "pnpm clean --filter `./apps/api",
+    "prisma:studio": "pnpm prisma:studio --filter `./apps/api`"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
