@@ -9,15 +9,24 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@repo/ui": "workspace:*",
+    "@tanstack/react-query": "^5.28.9",
+    "@tanstack/react-query-devtools": "^5.28.10",
+    "axios": "^1.6.8",
+    "dayjs": "^1.11.10",
+    "echarts": "^5.5.0",
     "next": "^14.0.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",
-    "@repo/eslint-config": "workspace:*",
+    "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:*",
+    "@tanstack/eslint-plugin-query": "^5.28.6",
     "@types/eslint": "^8.56.1",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",

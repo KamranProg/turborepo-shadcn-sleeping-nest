@@ -11,7 +11,7 @@ export default function LandingPage() {
       <p>Start logging sleeps</p>
       <div className="flex gap-2 items-center">
         <Button asChild>
-          <Link href="/sleeps-overview">Go</Link>
+          <Link href="sleeps-overview-list">Go</Link>
         </Button>
       </div>
     </>
