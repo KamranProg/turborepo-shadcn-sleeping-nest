@@ -8,6 +8,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
+export type { Row, ColumnDef } from "@tanstack/react-table";
+
 import {
   Table,
   TableBody,
@@ -24,7 +26,7 @@ import {
   ChevronRightIcon,
 } from "lucide-react";
 
-export type DataTableColumnDef<T>= ColumnDef<T>;
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -59,7 +61,7 @@ export function DataTable<TData, TValue>({
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </TableHead>
                 );

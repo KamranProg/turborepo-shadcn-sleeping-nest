@@ -17,5 +17,7 @@ export {
   Undo2,
   ViewIcon,
   PencilIcon,
-  TrashIcon
+  TrashIcon,
+  AlertCircle,
+  MoreHorizontal
 } from "lucide-react";
