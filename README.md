@@ -20,7 +20,7 @@ git clone https://github.com/dan5py/turborepo-shadcn-ui.git
 Install dependencies:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-shadcn-sleeping-nest
 pnpm install
 ```
 
@@ -80,7 +80,7 @@ This Turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-shadcn-sleeping-nest
 pnpm build
 ```
 
@@ -89,7 +89,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```sh
-cd turborepo-shadcn-ui
+cd turborepo-shadcn-sleeping-nest
 pnpm dev
 ```
 
@@ -100,7 +100,7 @@ Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd turborepo-shadcn-ui
+cd turborepo-shadcn-sleeping-nest
 npx turbo login
 ```
 
