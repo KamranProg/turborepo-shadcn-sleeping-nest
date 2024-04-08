@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Toaster } from "@repo/ui/components/ui/sonner";
 import { cn } from "@repo/ui/lib/utils";
+import { TanStackQueryProvider } from "../providers/TanStackQueryProvider";
 import "@repo/ui/globals.css";
 
 const poppins = Poppins({
@@ -20,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(poppins.className, "dark")}>{children}</body>
+      <body className={cn(poppins.className, "dark")}>
+        <TanStackQueryProvider>{children}</TanStackQueryProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }
