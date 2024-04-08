@@ -1,128 +1,47 @@
-# Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
-This is Turborepo starter with shadcn/ui pre-configured.
+# Welcome to turborepo-shadcn-sleeping-nest App
 
-> [!NOTE]
-> This example uses `pnpm` as package manager.
+## Steps to run the app
 
-[npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
+This monorepo use [pnpm](https://pnpm.io/) as a package managers, Install dependencies:
 
-## Using this example
+   ```sh
+   pnpm install
+   cd apps/api
+   ```
 
-Clone the repository:
+go the api folder app:
 
-```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git
-```
+   ```sh
+   cd apps/api
+   ```
 
-Install dependencies:
+This api app is using Prisma integrated with PostgreSQL. 
+Create a .env file with the following environment variables:
 
-```sh
-cd turborepo-shadcn-sleeping-nest
-pnpm install
-```
+DATABASE_URL=<put your url string>
+DATABASE_URL_UNPOOLED=<put your url string UNPOOLED>
 
-### Add ui components
 
-Use the pre-made script:
+If you want a different setup, make sure to add the required environment variables and update datasource db { ... } in apps/api/prisma/schema.prisma accordingly.
 
-```sh
-pnpm ui:add <component-name>
-```
+Once done, make sure you are in the apps/api directory, then seed the Database:
 
-> This works just like the add command in the `shadcn/ui` CLI.
+   ```sh
+   pnpm db:seed
+   ```
 
-### Add a new app
 
-Turborepo offer a simple command to add a new app:
+Run the development server:
 
-```sh
-pnpm turbo gen workspace --name <app-name>
-```
+   ```sh
+   pnpm dev
+   ```
 
-This will create a new empty app in the `apps` directory.
 
-If you want, you can copy an existing app with:
+Open the client app: http://localhost:3002
 
-```sh
-pnpm turbo gen workspace --name <app-name> --copy
-```
+Swagger API should be available at: http://localhost:3000/docs
 
-> [!NOTE]
-> Remember to run `pnpm install` after copying an app.
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications (🚀 powered by **shadcn/ui**)
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```sh
-cd turborepo-shadcn-sleeping-nest
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```sh
-cd turborepo-shadcn-sleeping-nest
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd turborepo-shadcn-sleeping-nest
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```sh
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
-
-Learn more about shadcn/ui:
-
-- [Documentation](https://ui.shadcn.com/docs)
+You can learn more about the monorepo starter [here:](https://github.com/dan5py/turborepo-shadcn-ui)
