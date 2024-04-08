@@ -8,7 +8,6 @@ This monorepo use [pnpm](https://pnpm.io/) as a package managers, Install depend
 
    ```sh
    pnpm install
-   cd apps/api
    ```
 
 go the api folder app:
@@ -24,6 +23,7 @@ DATABASE_URL=<put your url string>
 DATABASE_URL_UNPOOLED=<put your url string UNPOOLED>
 
 
+I used [Neon](https://neon.tech/) - a hosted free db service, 
 If you want a different setup, make sure to add the required environment variables and update datasource db { ... } in apps/api/prisma/schema.prisma accordingly.
 
 Once done, make sure you are in the apps/api directory, then seed the Database:
