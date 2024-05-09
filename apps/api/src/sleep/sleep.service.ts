@@ -29,11 +29,18 @@ export class SleepService {
     }
 
     if (whereConditions.length === 0) {
-      return this.databaseService.sleep.findMany();
+      return this.databaseService.sleep.findMany({
+        orderBy: {
+          createdAt: 'desc', // Sort by createdAt in descending order
+        },
+      });
     } else {
       return this.databaseService.sleep.findMany({
         where: {
           OR: whereConditions,
+        },
+        orderBy: {
+          createdAt: 'desc', // Sort by createdAt in descending order
         },
       });
     }

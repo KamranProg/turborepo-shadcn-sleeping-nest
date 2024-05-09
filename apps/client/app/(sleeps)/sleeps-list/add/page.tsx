@@ -45,9 +45,6 @@ import { BasicAlerts } from "../../../../shard-components/BasicAlerts";
 export default function AddSleepForm() {
   const router = useRouter();
   const [responseError, setResponseError] = useState<NestErrorData | string>();
-  const [openItemExistsAlert, setOpenItemExistsAlert] = useState(false);
-
-  const { data: sleeps } = useFindAllSleeps();
 
   const { mutate: createSleep } = useCreateSleep(
     () => {
@@ -64,25 +61,12 @@ export default function AddSleepForm() {
   });
 
   const handleSubmit = (data: SleepInput) => {
-    console.log("login validation passed: ", data);
-    const existingSleepName = sleeps?.filter(
-      (sleep) =>
-        sleep.name.toUpperCase().trim() === data?.name?.toUpperCase().trim(),
-    );
-    if (existingSleepName && existingSleepName?.length <= 0) {
-      const payload = {
-        ...data,
-        sleepDuration: +data.sleepDuration,
-      };
-      createSleep({ sleep: payload as Partial<Sleep> }); // Create sleep
-    } else {
-      setOpenItemExistsAlert(true);
-    }
+    const payload = {
+      ...data,
+      sleepDuration: +data.sleepDuration,
+    };
+    createSleep({ sleep: payload as Partial<Sleep> }); // Create sleep
   };
-
-  // const handleDialogClose = () => {
-  //   setOpenItemExistsAlert(false);
-  // };
 
   const renderAlerts = (responseError: NestErrorData | string) => {
     if (typeof responseError === "string")
